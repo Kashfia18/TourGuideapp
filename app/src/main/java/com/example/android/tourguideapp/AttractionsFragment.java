@@ -70,7 +70,7 @@ public class AttractionsFragment extends Fragment {
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
         // word_list.xml layout file.
-        ListView listView = (ListView) rootView.findViewById(R.id.list);
+        final ListView listView = (ListView) rootView.findViewById(R.id.list);
 
         // Make the {@link ListView} use the {@link PlaceAdapter} we created above, so that the
         // {@link ListView} will display list items for each {@link Place} in the list.
@@ -82,17 +82,17 @@ public class AttractionsFragment extends Fragment {
             // The code in this method will be executed when the each of list items is clicked on.
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Place listItem = places.get(position);
-//                object listItem = listView.getItemAtPosition(position);
-//                Intent intent = new Intent(getActivity(), Description.class);
-//                //Transfer data of the listView from this activity to Now Playing activity,
-//                //for playing the song that is clicked on
-//                intent.putExtra("Myplace", (Parcelable) listItem);
-//                startActivity(intent);
-                Fragment attractionsFragment = new AttractionsFragment();
-                Bundle bundle = new Bundle();
-                bundle.putParcelable("Myplace", (Parcelable) listItem);
-                attractionsFragment.setArguments(bundle);
+//                Place listItem = places.get(position);
+                Object listItem = listView.getItemAtPosition(position);
+                Intent intent = new Intent(getActivity(), Description.class);
+                //Transfer data of the listView from this activity to Now Playing activity,
+                //for playing the song that is clicked on
+                intent.putExtra("Myplace", (Parcelable) listItem);
+                startActivity(intent);
+//                Fragment attractionsFragment = new AttractionsFragment();
+//                Bundle bundle = new Bundle();
+//                bundle.putParcelable("Myplace", (Parcelable) listItem);
+//                attractionsFragment.setArguments(bundle);
             }
         });
 
