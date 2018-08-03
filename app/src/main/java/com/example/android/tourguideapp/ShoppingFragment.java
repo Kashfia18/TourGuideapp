@@ -30,7 +30,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 /**
- * {@link Fragment} that displays a list of color vocabulary words.
+ * {@link Fragment} that displays a list of places that are shopping centers.
  */
 public class ShoppingFragment extends Fragment {
 
@@ -68,7 +68,7 @@ public class ShoppingFragment extends Fragment {
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
-        // word_list.xml layout file.
+        // list_of_info.xml layout file.
         ListView listView = (ListView) rootView.findViewById(R.id.list);
 
         // Make the {@link ListView} use the {@link PlaceAdapter} we created above, so that the

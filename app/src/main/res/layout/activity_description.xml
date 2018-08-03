@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Layout for the item that is playing -->
+<!-- Layout for Description activity that show details -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    tools:context="com.example.android.tourguideapp.Description">
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,41 +12,37 @@
         android:background="@color/tan_background"
         android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/place_name"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:padding="@dimen/padding_around_name"/>
+
             <ImageView
                 android:id="@+id/place_icon"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="10"
-                android:adjustViewBounds="true"/>
-
-            <TextView
-                android:id="@+id/place_name"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textColor="@android:color/black"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/place_location"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textColor="@android:color/black"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:paddingLeft="@dimen/padding_left_of_image"
+                android:paddingStart="@dimen/padding_left_of_image"
+                android:paddingRight="@dimen/padding_right_of_image"
+                android:paddingEnd="@dimen/padding_right_of_image"
+                android:contentDescription="@string/describe_image"/>
 
             <TextView
                 android:id="@+id/place_description"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:gravity="start"
+                android:layout_height="wrap_content"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="@android:color/black"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:padding="@dimen/padding_around_name"/>
 
     </LinearLayout>
-
-
 </ScrollView>

@@ -3,4 +3,7 @@
     <!-- Height of each list item -->
     <dimen name="list_item_height">88dp</dimen>
     <dimen name="space_between_image_text">16dp</dimen>
+    <dimen name="padding_around_name">16dp</dimen>
+    <dimen name="padding_left_of_image">16dp</dimen>
+    <dimen name="padding_right_of_image">16dp</dimen>
 </resources>

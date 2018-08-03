@@ -38,10 +38,28 @@
     <string name="shop8_restaurant">410 Four Seasons Town Centre\n Greensboro, NC 27407</string>
     <string name="attraction1">North Carolina Museum of Natural Sciences</string>
     <string name="attraction1_location">11 W Jones St\n Raleigh, NC 27601</string>
+    <string name="attraction1_details">The North Carolina Museum of Natural Sciences is the Southeast’s
+        largest natural history museum, complete with its Nature Exploration Center and Nature Research Center,
+        with four floors of exhibits, live animals, gift shops and cafés. Explore on a variety of different
+        self-guided tours through all the different exhibits.</string>
     <string name="attraction2">North Carolina Museum of Art</string>
     <string name="attraction2_location">2110 Blue Ridge Rd\n Raleigh, NC 27607</string>
+    <string name="attraction2_details">The North Carolina Museum of Art has more than a dozen galleries
+        holding works from around the world and a variety of art types. Originally starting with 139 works
+        from Europe and America, the museum has grown to include African, Egyptian and Jewish works of art
+        while also expanding European and ancient American holdings. With 30 added Rodin sculptures, the NCMA
+        leads the holdings of this artist’s work in the southeastern United States. Other galleries hold everything
+        from Renaissance paintings to contemporary photography. Exhibitions also run at the museum for several
+        months at a time for guests to visit.</string>
     <string name="attraction3">Pullen Park</string>
     <string name="attraction3_location">520 Ashe Ave\n Raleigh, NC 27606</string>
+    <string name="attraction3_details">Established in 1887 and designated as the first public park in N.C.,
+        Pullen Park in Raleigh sits nestled between downtown Raleigh and the main campus of North Carolina
+        State University. Known for terrific recreational opportunities—especially for kids and families—the park
+        includes an operating carousel built in 1911, a miniature train you can ride through the park, pedal boats
+        to cruise around Lake Howell, plus tennis courts, baseball and softball fields, an arts center and an
+        innovative performing arts venue, Theatre In The Park (Ira David Wood III Pullen Park Theatre). Free
+        admission; small fee for amusement rides. Hours vary; call or visit website for more details.</string>
     <string name="attraction4">William B. Umstead State Park</string>
     <string name="attraction4_location">8801 Glenwood Ave\n Raleigh, NC 27617</string>
     <string name="attraction5">Marbles Kids Museum</string>
@@ -69,4 +87,5 @@
     <string name="theatre_8">Marquee Cinemas</string>
     <string name="theatre8_location">10600 Common Oaks Dr\n Raleigh, NC 27614</string>
     <string name="Details">Details</string>
+    <string name="describe_image">representing image</string>
 </resources>

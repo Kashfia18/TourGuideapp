@@ -19,28 +19,45 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * {@link Place} represents a vocabulary word that the user wants to learn.
- * It contains resource IDs for the default translation, Miwok translation, audio file, and
- * optional image file for that word.
+ * {@link Place} represents a place that the user might visit.
+ * It contains resource IDs for the name of a place, the location and
+ * image file for that place.
  */
 public class Place implements Parcelable{
 
-    /** String resource ID for the default translation of the word */
+    /** String resource ID for the name of a place */
     private int mPlaceResourceId;
 
-    /** String resource ID for the Miwok translation of the word */
+    /** String resource ID for the location of a place */
     private int mLocationResourceId;
 
-    /** Image resource ID for the word */
+    /** Image resource ID for the place */
     private int mImageResourceId;
+
+    /** String resource ID for the description of a place */
+    private int mDescriptionResourceId;
 
     /**
      * Create a new Place object.
      *
-     * @param placeResourceId is the string resource ID for the word in a language that the
-     *                             user is already familiar with (such as English)
-     * @param locationResourceId is the string resource Id for the word in the Miwok language
-     * @param imageResourceId is the drawable resource ID for the image associated with the word
+     * @param placeResourceId is the string resource ID for the name of the place.
+     * @param locationResourceId is the string resource ID for the location of the place.
+     * @param imageResourceId is the drawable resource ID for the image of the place.
+     * @param descriptionResourceId is the string resource ID for optional details of the place.
+     */
+    public Place(int placeResourceId, int locationResourceId, int imageResourceId, int descriptionResourceId) {
+        mPlaceResourceId = placeResourceId;
+        mLocationResourceId = locationResourceId;
+        mImageResourceId = imageResourceId;
+        mDescriptionResourceId = descriptionResourceId;
+    }
+
+    /**
+     * Create a new Place object.
+     *
+     * @param placeResourceId is the string resource ID for the name of the place.
+     * @param locationResourceId is the string resource ID for the location of the place.
+     * @param imageResourceId is the drawable resource ID for the image of the place.
      */
     public Place(int placeResourceId, int locationResourceId, int imageResourceId) {
         mPlaceResourceId = placeResourceId;
@@ -49,43 +66,49 @@ public class Place implements Parcelable{
     }
 
     /**
-     * Get the string resource ID for the default translation of the word.
+     * Get the string resource ID for the name of the place.
      */
     public int getPlaceResourceId() {
         return mPlaceResourceId;
     }
 
     /**
-     * Get the string resource ID for the Miwok translation of the word.
+     * Get the string resource ID for the location of the place
      */
     public int getLocationResourceId() {
         return mLocationResourceId;
     }
 
     /**
-     * Return the image resource ID of the word.
+     * Return the image resource ID of the place.
      */
     public int getImageResourceId() {
         return mImageResourceId;
+    }
+
+    /**
+     * Get the string resource ID for the description of the place
+     */
+    public int getDescriptionResourceId() {
+        return mDescriptionResourceId;
     }
 
     public int describeContents() {
         return 0;
     }
 
-    //write object values to parcel for storage. In this method we write all the properties of Song object
+    //write object values to parcel for storage. In this method we write all the properties of Place object
     //to parcel in preparation of transfer. write method is used to add each of the properties.
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mPlaceResourceId);
-        dest.writeInt(mLocationResourceId);
+        dest.writeInt(mDescriptionResourceId);
         dest.writeInt(mImageResourceId);
-
     }
 
     //constructor used for parcel. Called in the receiving activity, where we will collect values.
     public Place(Parcel parcel) {
         mPlaceResourceId = parcel.readInt();
-        mLocationResourceId = parcel.readInt();
+        mDescriptionResourceId = parcel.readInt();
         mImageResourceId = parcel.readInt();
     }
 
@@ -99,7 +122,7 @@ public class Place implements Parcelable{
 
         @Override
         public Place[] newArray(int size) {
-            return new Place[0];
+            return new Place[size];
         }
     };
 

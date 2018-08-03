@@ -26,7 +26,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 /**
- * {@link Fragment} that displays a list of number vocabulary words.
+ * {@link Fragment} that displays a list of places that are restaurants.
  */
 public class RestaurantsFragment extends Fragment {
 
@@ -39,7 +39,7 @@ public class RestaurantsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.list_of_info, container, false);
 
-        // Create a list of names
+        // Create a list of restaurant places.
         final ArrayList<Place> places = new ArrayList<Place>();
         places.add(new Place(R.string.restaurant_1, R.string.restaurant1_location,
                 R.drawable.sitti));
@@ -64,8 +64,8 @@ public class RestaurantsFragment extends Fragment {
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
-        // word_list.xml layout file.
-        ListView listView = (ListView) rootView.findViewById(R.id.list);
+        // list_of_info.xml layout file.
+        ListView listView = rootView.findViewById(R.id.list);
 
         // Make the {@link ListView} use the {@link PlaceAdapter} we created above, so that the
         // {@link ListView} will display list items for each {@link Place} in the list.

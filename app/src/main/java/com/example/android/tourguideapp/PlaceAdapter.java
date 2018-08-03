@@ -32,18 +32,18 @@ import java.util.ArrayList;
  */
 public class PlaceAdapter extends ArrayAdapter<Place> {
 
-    /** Resource ID for the background color for this list of words */
+    /** Resource ID for the background color for this list of places */
     private int mColorResourceId;
 
     /**
      * Create a new {@link PlaceAdapter} object.
      *
      * @param context is the current context (i.e. Activity) that the adapter is being created in.
-     * @param names is the list of {@link Place}s to be displayed.
-     * @param colorResourceId is the resource ID for the background color for this list of names
+     * @param places is the list of {@link Place}s to be displayed.
+     * @param colorResourceId is the resource ID for the background color for this list of places
      */
-    public PlaceAdapter(Context context, ArrayList<Place> names, int colorResourceId) {
-        super(context, 0, names);
+    public PlaceAdapter(Context context, ArrayList<Place> places, int colorResourceId) {
+        super(context, 0, places);
         mColorResourceId = colorResourceId;
     }
 
@@ -59,21 +59,22 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
         // Get the {@link Place} object located at this position in the list
         Place currentPlace = getItem(position);
 
-        // Find the TextView in the list_item.xml layout with the ID miwok_text_view.
+        // Find the TextView in the list_item.xml layout with the ID name_text_view.
         TextView nameTextView = listItemView.findViewById(R.id.name_text_view);
-        // Get the Miwok translation from the currentName object and set this text on
-        // the Miwok TextView.
+        // Get the name from the currentPlace object and set this text on
+        // the name TextView.
         nameTextView.setText(currentPlace.getPlaceResourceId());
 
-        // Find the TextView in the list_item.xml layout with the ID default_text_view.
+        // Find the TextView in the list_item.xml layout with the ID location_text_view.
         TextView locationTextView = listItemView.findViewById(R.id.location_text_view);
-        // Get the default translation from the currentName object and set this text on
-        // the default TextView.
+        // Get the location from the currentPlace object and set this text on
+        // the location TextView.
         locationTextView.setText(currentPlace.getLocationResourceId());
 
         // Find the ImageView in the list_item.xml layout with the ID image.
         ImageView imageView = listItemView.findViewById(R.id.image);
-        // If an image is available, display the provided image based on the resource ID
+        // Get the image from the currentPlace object and set this image on
+        // the imageView.
         imageView.setImageResource(currentPlace.getImageResourceId());
 
         // Set the theme color for the list item
@@ -83,7 +84,7 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
         // Set the background color of the text container View
         textContainer.setBackgroundColor(color);
 
-        // Return the whole list item layout (containing 2 TextViews) so that it can be shown in
+        // Return the whole list item layout so that it can be shown in
         // the ListView.
         return listItemView;
     }

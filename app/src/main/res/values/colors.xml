@@ -2,8 +2,9 @@
 <resources>
     <color name="colorPrimary">#4A312A</color>
     <color name="colorPrimaryDark">#2F1D1A</color>
-    <!-- Background color for app -->
+    <!-- Background color for Description activity -->
     <color name="tan_background">#FFF7DA</color>
+    <!-- Background color for all Fragments. In case need to change -->
     <color name="category_restaurant">#ffe0b2</color>
     <color name="category_shopping">#ffe0b2</color>
     <color name="category_attractions">#ffe0b2</color>

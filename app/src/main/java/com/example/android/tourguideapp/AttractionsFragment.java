@@ -31,7 +31,7 @@ import junit.framework.Test;
 import java.util.ArrayList;
 
 /**
- * {@link Fragment} that displays a list of family vocabulary words.
+ * {@link Fragment} that displays a list of places that are attractions.
  */
 public class AttractionsFragment extends Fragment {
 
@@ -47,11 +47,11 @@ public class AttractionsFragment extends Fragment {
         // Create a list of places
         final ArrayList<Place> places = new ArrayList<Place>();
         places.add(new Place(R.string.attraction1, R.string.attraction1_location,
-                R.drawable.natural_science));
+                R.drawable.natural_science, R.string.attraction1_details));
         places.add(new Place(R.string.attraction2, R.string.attraction2_location,
-                R.drawable.art_museum));
+                R.drawable.art_museum, R.string.attraction2_details));
         places.add(new Place(R.string.attraction3, R.string.attraction3_location,
-                R.drawable.pullen));
+                R.drawable.pullen, R.string.attraction3_details));
         places.add(new Place(R.string.attraction4, R.string.attraction4_location,
                 R.drawable.umstead));
         places.add(new Place(R.string.attraction5, R.string.attraction5_location,
@@ -69,7 +69,7 @@ public class AttractionsFragment extends Fragment {
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
-        // word_list.xml layout file.
+        // list_of_info.xml layout file.
         final ListView listView = (ListView) rootView.findViewById(R.id.list);
 
         // Make the {@link ListView} use the {@link PlaceAdapter} we created above, so that the
@@ -82,17 +82,10 @@ public class AttractionsFragment extends Fragment {
             // The code in this method will be executed when the each of list items is clicked on.
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Place listItem = places.get(position);
                 Object listItem = listView.getItemAtPosition(position);
                 Intent intent = new Intent(getActivity(), Description.class);
-                //Transfer data of the listView from this activity to Now Playing activity,
-                //for playing the song that is clicked on
                 intent.putExtra("Myplace", (Parcelable) listItem);
                 startActivity(intent);
-//                Fragment attractionsFragment = new AttractionsFragment();
-//                Bundle bundle = new Bundle();
-//                bundle.putParcelable("Myplace", (Parcelable) listItem);
-//                attractionsFragment.setArguments(bundle);
             }
         });
 
